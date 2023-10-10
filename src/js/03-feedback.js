@@ -18,12 +18,13 @@ function saveFormState() {
         message: form.elements.message.value,
     };
     localStorage.setItem(localStorageKey, JSON.stringify(formState));
-
-    console.log(formState);
 }
 
 function handlerSubmit(evt) {
   evt.preventDefault();
+
+  console.log(localStorage.getItem(localStorageKey));
+
   localStorage.removeItem(localStorageKey);
-  form.reset();  
+  form.reset(); 
 };
